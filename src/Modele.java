@@ -31,6 +31,25 @@ public class Modele {
 		}
 	}
 	
+	public Color[] verifierProposition() {
+		Color[] correction = {null,null,null,null};
+		int indice = 0;
+		for (int i = 0; i < 4; i++) {
+			for (int j = 0; j < 4; j++) {
+				if (this.propositions.get(this.propositions.size()-1).equals(this.combinaisonInitiale)) {
+					if (i == j) {
+						correction[indice] = Color.white;
+					} else {
+						correction[indice] = Color.black;
+						
+					}
+				indice++;
+				}
+			}
+		}
+		return correction;
+	}
+	
 	public String toString() {
 		StringBuilder phrase = new StringBuilder();
 		/*phrase.append("Derniere proposition : " + this.propositions.get(this.propositions.size()-1));*/
