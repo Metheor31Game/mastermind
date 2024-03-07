@@ -13,8 +13,14 @@ public class Graphic extends Canvas {
 	
 	public void paint(Graphics g) {
 		
-		
-		g.drawRect(0, 0, 25, 25);
+		int originX = 75; 
+		int originY = 750;
+		int delta = 60;
+		int taille = 40;
+		for(int i = 0; i<Modele.COULEURS.length; i++) {
+			g.setColor(Modele.COULEURS[i]);
+			g.fillRect(originX+i*delta, originY, taille, taille);
+		}
 		
 	}
 	
