@@ -16,8 +16,9 @@ public class Modele {
 	
 	public Modele() {
 		this.etat = Etat.EN_COURS;
-		this.combinaisonInitiale = new Rangee();
+		this.combinaisonInitiale = new Rangee(true);
 		this.propositions = new ArrayList<>();
+		this.combinaison = new Rangee();
 	}
 	
 	public void ajouterProposition(Rangee r) {
@@ -28,6 +29,14 @@ public class Modele {
 			// TODO Appel fonction de vérification
 		} else {
 			// TODO Appeler fonction de defaite
+		}
+	}
+	
+	public void ajouterProposition(Color c) {
+		if (this.combinaison.ajouterCouleur(c)) {
+			this.propositions.add(combinaison);
+			this.combinaison = new Rangee();
+			this.tentative--;
 		}
 	}
 	
@@ -63,9 +72,6 @@ public class Modele {
 		
 		System.out.println(m);
 		
-		m.ajouterProposition(new Rangee(Color.yellow,Color.green,Color.blue,Color.red));
-		
-		System.out.println(m);
 		
 	}
 	
