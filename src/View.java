@@ -28,11 +28,6 @@ public class View extends Frame implements WindowListener{
 		this.setVisible(true);
 	}
 	
-	
-	public static void main(String[] args) {
-		View v = new View();
-		
-	}
 
 
 	@Override
