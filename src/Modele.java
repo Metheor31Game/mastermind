@@ -21,17 +21,6 @@ public class Modele {
 		this.combinaison = new Rangee();
 	}
 	
-	public void ajouterProposition(Rangee r) {
-		/*Ne pas oublier de vérifier si il reste des tentatives, mais je sais pas si je l'ajoute maintenant ou non */
-		if (this.tentative < Modele.N_TENTATIVES) {
-			this.propositions.add(r);
-			this.tentative-=1;
-			// TODO Appel fonction de vérification
-		} else {
-			// TODO Appeler fonction de defaite
-		}
-	}
-	
 	public void ajouterProposition(Color c) {
 		if (this.combinaison.ajouterCouleur(c)) {
 			this.propositions.add(combinaison);
@@ -69,9 +58,25 @@ public class Modele {
 	
 	public static void main(String[] args) {
 		Modele m = new Modele();
+		View v = new View();
+		System.out.println(m);
+		
+		m.ajouterProposition(Color.black);
+		m.ajouterProposition(Color.white);
 		
 		System.out.println(m);
 		
+		m.ajouterProposition(Color.black);
+		m.ajouterProposition(Color.white);
+		
+		System.out.println(m);
+		
+		m.ajouterProposition(Color.red);
+		m.ajouterProposition(Color.red);
+		m.ajouterProposition(Color.red);
+		m.ajouterProposition(Color.red);
+		
+		System.out.println(m);
 		
 	}
 	
