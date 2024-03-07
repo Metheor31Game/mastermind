@@ -6,6 +6,7 @@ public class Graphic extends Canvas {
 	
 	public Graphic() {
 		super();
+		//test
 		this.setPreferredSize(new Dimension(600,800));
 		
 	}

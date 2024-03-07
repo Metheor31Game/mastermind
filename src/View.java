@@ -6,7 +6,7 @@ public class View extends Frame implements WindowListener{
 	
 	
 	public View() {
-		
+		//test
 		super();
 		this.setLayout(new BorderLayout());
 		
