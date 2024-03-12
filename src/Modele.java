@@ -9,16 +9,17 @@ public class Modele {
 	enum Etat {EN_COURS,GAGNE,PERDU};
 	
 	Etat etat;
-	Rangee combinaison;
-	Rangee combinaisonInitiale;
-	ArrayList<Rangee> propositions;
-	int tentative;
+	Rangee combinaison; //combinaison actuelle : devient une proposition quand la combinaison est terminee
+	Rangee combinaisonInitiale; // combinaison solution
+	ArrayList<Rangee> propositions; // liste des propositions / combinaisons du joueur
+	int tentative; //Nombre de tentatives : commence a 0
 	
 	public Modele() {
 		this.etat = Etat.EN_COURS;
 		this.combinaisonInitiale = new Rangee(true);
 		this.propositions = new ArrayList<>();
 		this.combinaison = new Rangee();
+		this.tentative = Modele.N_TENTATIVES;
 	}
 	
 	public void ajouterProposition(Color c) {
@@ -50,7 +51,6 @@ public class Modele {
 	
 	public String toString() {
 		StringBuilder phrase = new StringBuilder();
-		/*phrase.append("Derniere proposition : " + this.propositions.get(this.propositions.size()-1));*/
 		phrase.append("\nRésultat : " + this.combinaisonInitiale);
 		phrase.append("\nPropositions : \n" + this.propositions.toString());
 		return phrase.toString();
